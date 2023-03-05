@@ -3,8 +3,8 @@ package com.example.tictactoe;
 import static com.example.tictactoe.Board.*;
 import static com.example.tictactoe.Colors.*;
 import static com.example.tictactoe.ComputerTurn.*;
-import static com.example.tictactoe.Player1Turn.*;
-import static com.example.tictactoe.Player2Turn.*;
+import static com.example.tictactoe.PlaceMove.*;
+import static com.example.tictactoe.PlayerTurn.*;
 import static com.example.tictactoe.TicTacToeApplication.scanner;
 import static com.example.tictactoe.WinOrLose.*;
 import static java.lang.Thread.sleep;
@@ -12,14 +12,17 @@ import static java.lang.Thread.sleep;
 public class GameModesSrc {
 
     static Player player1 = new Player("");
+    static Move player1Move = new Move("");
+
     static Player player2 = new Player("");
+    static Move player2Move = new Move("");
     static String choice;
 
     // CPU's move for 5x5 board.
     public static void showComputerMove5() throws InterruptedException {
         sleep(500);
         System.out.print(fcPURPLE + "\nCPU's move is: " + cRESET);
-        System.out.print(getComputerMove5());
+        System.out.print(getComputerMove5(computerMove));
         sleep(500);
         System.out.println("\n");
         showBoard5(gameBoard5);
@@ -29,7 +32,8 @@ public class GameModesSrc {
     public static void getPlayer1Choice3() throws InterruptedException {
         System.out.println(fcRED + "     e - exit " + cRESET);
         System.out.print("\n" + player1.getName() + fcPURPLE + ", pick a number (1-9): " + cRESET);
-        getPlayer1Move3();
+        getPlayerMove3(player1Move);
+        placeMove3(gameBoard3, player1Move, fcGREEN + "O" + cRESET);
         System.out.println(" ");
     }
 
@@ -37,7 +41,8 @@ public class GameModesSrc {
     public static void getPlayer2Choice3() throws InterruptedException {
         System.out.println(fcRED + "     e - exit " + cRESET);
         System.out.print("\n" + player2.getName() + fcPURPLE + ", pick a number (1-9): " + cRESET);
-        getPlayer2Move3();
+        getPlayerMove3(player2Move);
+        placeMove3(gameBoard3, player2Move, fcCYAN + "X" + cRESET);
         System.out.println(" ");
     }
 
@@ -45,7 +50,8 @@ public class GameModesSrc {
     public static void getPlayer1Choice5() throws InterruptedException {
         System.out.println(fcRED + "             e - exit" + cRESET);
         System.out.print("\n" + player1.getName() + fcPURPLE + ", pick a number (01-25): " + cRESET);
-        getPlayer1Move5();
+        getPlayerMove5(player1Move);
+        placeMove5(gameBoard5, player1Move, fcGREEN + "::" + cRESET);
         System.out.println(" ");
     }
 
@@ -53,7 +59,8 @@ public class GameModesSrc {
     public static void getPlayer2Choice5() throws InterruptedException {
         System.out.println(fcRED + "             e - exit" + cRESET);
         System.out.print("\n" + player2.getName() + fcPURPLE + ", pick a number (01-25): " + cRESET);
-        getPlayer2Move5();
+        getPlayerMove5(player2Move);
+        placeMove5(gameBoard5, player2Move, fcCYAN + "~~" + cRESET);
         System.out.println(" ");
     }
 

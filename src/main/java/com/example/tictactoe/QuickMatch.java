@@ -60,7 +60,7 @@ public class QuickMatch {
             sleep(500);
             System.out.println(" ");
             System.out.print(fcPURPLE + "CPU's move is: " + cRESET);
-            System.out.print(getComputerMove3());
+            System.out.print(getComputerMove3(computerMove));
             sleep(500);
             System.out.println("\n");
             showBoard3(gameBoard3);

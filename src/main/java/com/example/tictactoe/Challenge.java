@@ -8,7 +8,6 @@ import static com.example.tictactoe.TicTacToeApplication.*;
 
 public class Challenge {
 
-
     // Set Players names.
     public static void setNames() {
         System.out.println(" ");

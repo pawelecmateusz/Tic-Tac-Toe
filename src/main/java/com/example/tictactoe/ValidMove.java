@@ -3,8 +3,8 @@ package com.example.tictactoe;
 public class ValidMove {
 
     // See if it's possible to put player's and CPU's symbol on the 3x3 game board.
-    public static boolean isMoveValid3(String[][] theBoard3, String position) {
-        return switch (position) {
+    public static boolean isMoveValid3(String[][] theBoard3, Move move) {
+        return switch (move.getMove()) {
             case "1" -> (theBoard3[0][0].equals("1"));
             case "2" -> (theBoard3[0][1].equals("2"));
             case "3" -> (theBoard3[0][2].equals("3"));
@@ -19,8 +19,8 @@ public class ValidMove {
     }
 
     // See if it's possible to put player's and CPU's symbol on the 5x5 game board.
-    public static boolean isMoveValid5(String[][] theBoard5, String position) {
-        return switch (position) {
+    public static boolean isMoveValid5(String[][] theBoard5, Move move) {
+        return switch (move.getMove()) {
             case "01", "1" -> (theBoard5[0][0].equals("01"));
             case "02", "2" -> (theBoard5[0][1].equals("02"));
             case "03", "3" -> (theBoard5[0][2].equals("03"));

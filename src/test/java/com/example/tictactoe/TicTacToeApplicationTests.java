@@ -121,7 +121,7 @@ class TicTacToeApplicationTests {
 				{" ", " ", " "},
 				{" ", " ", " "}};
 		//when
-		String player1Move = "a";
+		Move player1Move = new Move("a");
 		//then
 
 		Assertions.assertFalse(isMoveValid3(gameBoard3, player1Move));
@@ -245,8 +245,8 @@ class TicTacToeApplicationTests {
 								{"16", "17", "18", "19", "20"},
 								{"21", "22", "23", "24", "25"}};
 		//when
-		String player1Move01 = "01";
-		String player1Move1 = "1";
+		Move player1Move01 = new Move("01");
+		Move player1Move1 = new Move("1");
 		//then
 
 		Assertions.assertTrue(isMoveValid5(gameBoard5, player1Move01));
@@ -262,9 +262,12 @@ class TicTacToeApplicationTests {
 								{"16", "17", "18", "19", "20"},
 								{"21", "22", "23", "24", "25"}};
 		//when
-		placeMove5(gameBoard5, "01", "::");
-		placeMove5(gameBoard5, "07", "::");
-		placeMove5(gameBoard5, "13", "::");
+		Move player1Move01 = new Move("01");
+		Move player1Mov07 = new Move("07");
+		Move player1Move13 = new Move("13");
+		placeMove5(gameBoard5, player1Move01, "::");
+		placeMove5(gameBoard5, player1Mov07, "::");
+		placeMove5(gameBoard5, player1Move13, "::");
 		//then
 
 		Assertions.assertEquals("::", gameBoard5[0][0]);

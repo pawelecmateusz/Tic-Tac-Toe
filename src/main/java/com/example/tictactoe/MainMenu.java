@@ -57,11 +57,13 @@ public class MainMenu {
         }
     }
 
+    // Back to Menu.
     public static void goBackToMenu() throws InterruptedException {
         System.out.println(" ");
         showMenu();
         chooseMode();
     }
+
     // Inform the player about the new name for the game.
     public static void showSpidersAndSnakes() throws InterruptedException {
         System.out.println(fcYELLOW + " This is not " + ticTacToe + fcYELLOW + " anymore..." + cRESET);

@@ -3,8 +3,8 @@ package com.example.tictactoe;
 public class PlaceMove {
 
     //Get player's and CPU's move (numbers 1-9) and place their symbol in the right spot on the 3x3 game board
-    public static void placeMove3(String[][] gameBoard3, String position, String symbol) {
-        switch (position) {
+    public static void placeMove3(String[][] gameBoard3, Move move, String symbol) {
+        switch (move.getMove()) {
             case "1" -> gameBoard3[0][0] = symbol;
             case "2" -> gameBoard3[0][1] = symbol;
             case "3" -> gameBoard3[0][2] = symbol;
@@ -19,8 +19,8 @@ public class PlaceMove {
     }
 
     // Get player's and CPU's move (numbers 01-25) and place their symbol in the right spot on the 5x5 game board
-    public static void placeMove5(String[][] gameBoard5, String position, String symbol) {
-        switch (position) {
+    public static void placeMove5(String[][] gameBoard5, Move move, String symbol) {
+        switch (move.getMove()) {
             case "01", "1" -> gameBoard5[0][0] = symbol;
             case "02", "2" -> gameBoard5[0][1] = symbol;
             case "03", "3" -> gameBoard5[0][2] = symbol;
